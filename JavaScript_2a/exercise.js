@@ -57,6 +57,7 @@ function exercise2() {
 
 function exercise3() {
     const temperature = prompt("What is the current temperature")
+    const isRaining = prompt("Is it raining?")
     function weatherAdvice(temperature, isRaining){
         if (Number(temperature) < 32 && String(isRaining).toLowerCase() === 'yes') {
             return 'Freezing rain! Stay inside!'
@@ -70,4 +71,6 @@ function exercise3() {
             return "It's hot, stay hydrated!"
         }
     }
+
+    console.log(weatherAdvice(temperature, isRaining))
 }
