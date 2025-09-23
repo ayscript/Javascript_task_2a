@@ -111,3 +111,28 @@ function exercise4() {
 
   alert(ATMSimulation(balance, action, amount));
 }
+
+
+function exercise5(){
+
+
+    function personalAssistant(time, weather, dayType){
+        if(time >= 0 && time<4){
+            return "You should be sleeping currently"
+        }else if(time >=4 && time<6) {
+
+        } else if(time >= 6 && time<=8){
+
+        } else if(time > 8 && time<=16) {
+
+        }else if(time >= 17 && time<=19){
+
+        } else if (time >= 20 && time<= 24){
+
+        } else {
+
+        }
+    }
+
+    
+}
