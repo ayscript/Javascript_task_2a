@@ -36,41 +36,78 @@ function exercise2() {
   function calculatePrice(price, customerType, isFirstPurchase) {
     let discountedPrice = 0;
     if (String(customerType).toLowerCase() === "student") {
-      const discountPercentage = isFirstPurchase.toLowerCase() === 'yes' ? 15 : 10;
+      const discountPercentage =
+        isFirstPurchase.toLowerCase() === "yes" ? 15 : 10;
       discountedPrice =
         Number(price) - (discountPercentage / 100) * Number(price);
     } else if (String(customerType).toLowerCase() === "senior") {
-      const discountPercentage = isFirstPurchase.toLowerCase() === 'yes' ? 20 : 15;
+      const discountPercentage =
+        isFirstPurchase.toLowerCase() === "yes" ? 20 : 15;
       discountedPrice =
         Number(price) - (discountPercentage / 100) * Number(price);
     } else if (String(customerType).toLowerCase() === "employee") {
-      const discountPercentage = isFirstPurchase.toLowerCase() === 'yes' ? 25 : 20;
+      const discountPercentage =
+        isFirstPurchase.toLowerCase() === "yes" ? 25 : 20;
       discountedPrice =
         Number(price) - (discountPercentage / 100) * Number(price);
     }
 
-    return `Discounted price is ${discountedPrice}`
+    return `Discounted price is ${discountedPrice}`;
   }
 
-  console.log(calculatePrice(price, customerType, isFirstPurchase))
+  console.log(calculatePrice(price, customerType, isFirstPurchase));
 }
 
 function exercise3() {
-    const temperature = prompt("What is the current temperature")
-    const isRaining = prompt("Is it raining?")
-    function weatherAdvice(temperature, isRaining){
-        if (Number(temperature) < 32 && String(isRaining).toLowerCase() === 'yes') {
-            return 'Freezing rain! Stay inside!'
-        } else if(Number(temperature) < 32) {
-            return "Very cold, wear a heavy coat."
-        } else if(Number(temperature) >= 32 && Number(temperature) <= 59) {
-            return "Chilly, bring a jacket."
-        } else if(Number(temperature) >= 60 && Number(temperature) <= 79) {
-            return "Nice Weather!"
-        } else if (Number(temperature) >= 80) {
-            return "It's hot, stay hydrated!"
-        }
+  const temperature = prompt("What is the current temperature");
+  const isRaining = prompt("Is it raining?");
+  function weatherAdvice(temperature, isRaining) {
+    if (Number(temperature) < 32 && String(isRaining).toLowerCase() === "yes") {
+      return "Freezing rain! Stay inside!";
+    } else if (Number(temperature) < 32) {
+      return "Very cold, wear a heavy coat.";
+    } else if (Number(temperature) >= 32 && Number(temperature) <= 59) {
+      return "Chilly, bring a jacket.";
+    } else if (Number(temperature) >= 60 && Number(temperature) <= 79) {
+      return "Nice Weather!";
+    } else if (Number(temperature) >= 80) {
+      return "It's hot, stay hydrated!";
     }
+  }
 
-    console.log(weatherAdvice(temperature, isRaining))
+  console.log(weatherAdvice(temperature, isRaining));
+}
+
+function exercise4() {
+  const balance = 1000;
+  const action = prompt(
+    "What do you want to do? (Type either withdraw or deposit)"
+  );
+  const amount =
+    action.toLowerCase() === "withdraw"
+      ? prompt("Enter the amount you want to withdraw")
+      : prompt("Enter the amount you want to deposit");
+  function ATMSimulation(balance, action, amount) {
+    if (action.toLowerCase() === "withdraw") {
+      if (Number(amount) > 500) {
+        return "You have exceeded the transaction limit, Transaction limit is 500";
+      } else {
+        if (Number(amount) < balance) {
+          return `Withdrawal Successful! New Balance is ${
+            balance - Number(amount)
+          }`;
+        } else if (Number(amount) > balance) {
+          return `Insufficient funds yout Balance is ${balance}`;
+        }
+      }
+    } else if (action === "deposit") {
+      balance += Number(amount);
+
+      return `Deposit Successful, your new balance is ${balance}`;
+    } else {
+      return "You entered an invalid input";
+    }
+  }
+
+  alert(ATMSimulation(balance, action, amount));
 }
