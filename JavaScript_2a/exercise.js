@@ -23,7 +23,7 @@ function exercise1() {
       : `Score: ${score} -> Grade: ${grade}`;
   }
 
-  console.log(getGrade(Number(userInput)));
+  alert(getGrade(Number(userInput)));
 }
 
 function exercise2() {
@@ -55,7 +55,7 @@ function exercise2() {
     return `Discounted price is ${discountedPrice}`;
   }
 
-  console.log(calculatePrice(price, customerType, isFirstPurchase));
+  alert(calculatePrice(price, customerType, isFirstPurchase));
 }
 
 function exercise3() {
@@ -75,7 +75,7 @@ function exercise3() {
     }
   }
 
-  console.log(weatherAdvice(temperature, isRaining));
+  alert(weatherAdvice(temperature, isRaining));
 }
 
 function exercise4() {
