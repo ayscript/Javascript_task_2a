@@ -87,6 +87,7 @@ function exercise4() {
     action.toLowerCase() === "withdraw"
       ? prompt("Enter the amount you want to withdraw")
       : prompt("Enter the amount you want to deposit");
+      
   function ATMSimulation(balance, action, amount) {
     if (action.toLowerCase() === "withdraw") {
       if (Number(amount) > 500) {
